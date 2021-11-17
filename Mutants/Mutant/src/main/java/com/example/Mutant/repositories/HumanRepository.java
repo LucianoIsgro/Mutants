@@ -7,9 +7,5 @@ import org.springframework.data.jpa.repository.Query;
 import com.example.Mutant.entities.Human;
 
 public interface HumanRepository extends BaseRepository<Human,Long>  {
-	
-	
- 
-	
 
 }
