@@ -101,14 +101,11 @@ public class MutantController  extends BaseControllerImplementation<Mutant,Mutan
     	   
     try {
     		if(servicio.isMutant(dna)) {
-    	   
-    			List<Mutant> mutantes = servicio.findAll();
-       	 
-	       		for(int i=0;i<mutantes.size();i++) {
-	
-	       			String[] s = mutantes.get(i).getDna();
+    	   		List<Mutant> mutantes = servicio.findAll();
+       			for(int i=0;i<mutantes.size();i++) {
+				String[] s = mutantes.get(i).getDna();
 	       			
-	       			if(Arrays.deepEquals(dna, s)) {
+				if(Arrays.deepEquals(dna, s)) {
 	       				
 	       				return false;	
 	       			}		
@@ -116,19 +113,15 @@ public class MutantController  extends BaseControllerImplementation<Mutant,Mutan
 	    	 }else {
 	    		 
 	    		 List<Human> humanos = hservice.findAll();
-	
-	    		 for(int i=0;i<humanos.size();i++) {
-	
-	        			String[] s = humanos.get(i).getDnaH();
-	        			
-	        			if(Arrays.deepEquals(dna, s)) {
-	        				
-	        				return false;	
-	        			}
+			 for(int i=0;i<humanos.size();i++) {
+				String[] s = humanos.get(i).getDnaH();
+	        		if(Arrays.deepEquals(dna, s)) {
+	        			return false;	
+	        		}
 	    		 }
 	    	 }
 		
-		return true;
+	    	return true;
 	    	}catch(Exception e){
 	    		
 	    		return false;
