@@ -8,7 +8,5 @@ import org.springframework.data.repository.query.Param;
 import com.example.Mutant.entities.Mutant;
 
 public interface MutantRepository extends BaseRepository<Mutant,Long>  {
-	
-
-	
+		
 }
